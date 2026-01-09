@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champagne Birthday | Itinerary 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --veuve-yellow: #FFBE00;
+            --deep-gold: #B8860B;
+            --bg-cream: #FDFCF8;
+            --dark-text: #2D2D2D;
+        }
+        body { font-family: 'Montserrat', sans-serif; background: var(--bg-cream); color: var(--dark-text); margin: 0; padding: 0; }
+        
+        /* UPDATED HEADER WITH ESTATE IMAGE */
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=1500');
+            height: 55vh; 
+            background-size: cover; 
+            background-position: center 30%;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: white; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 8px solid var(--veuve-yellow);
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        
+        /* Logistics Bar */
+        .info-panel { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; background: white; padding: 30px; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: -80px; position: relative;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+        .info-item h4 { margin: 0 0 5px 0; color: var(--deep-gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        /* Itinerary Sections */
+        .day-block { margin-top: 60px; }
+        .day-title { font-family: 'Playfair Display'; font-size: 2.5rem; border-bottom: 2px solid #EEE; padding-bottom: 10px; margin-bottom: 30px; }
+        
+        /* Interactive Tiles */
+        .tile-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .tile { 
+            background: white; border-radius: 12px; border: 1px solid #EEE; 
+            padding: 25px; transition: 0.3s; cursor: pointer; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .tile:hover { border-color: var(--veuve-yellow); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .tile.selected { border: 2.5px solid var(--veuve-yellow); background: #FFFDF5; }
+        
+        .badge { position: absolute; top: 15px; right: 15px; font-size: 0.7rem; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .badge-primary { background: var(--veuve-yellow); color: black; }
+        .badge-alt { background: #EEE; color: #666; }
+
+        .meta { font-size: 0.85rem; color: #777; margin: 15px 0; display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn { display: block; text-align: center; background: #222; color: white; text-decoration: none; padding: 12px; border-radius: 6px; margin-top: auto; font-weight: 600; font-size: 0.85rem; }
+        .btn:hover { background: var(--deep-gold); }
+
+        .price-tag { font-weight: 600; color: #222; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-family:'Playfair Display'; font-size: 3.5rem; margin:0;">Champagne Birthday Trip</h1>
+    <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 2px;">Veuve Clicquot Estate & The Montagne de Reims</p>
+</header>
+
+<div class="container">
+    <div class="info-panel">
+        <div class="info-item"><h4>The Journey</h4><p>1h 45m drive from Paris. Pick up your rental car at Reims Centre.</p></div>
+        <div class="info-item"><h4>Reims ↔ Épernay</h4><p>35 min drive. Follow the "Route Touristique du Champagne."</p></div>
+        <div class="info-item"><h4>Car Logistics</h4><p>Free parking at most estates; tight street parking in Reims center.</p></div>
+    </div>
+
+    <div class="day-block">
+        <h2 class="day-title">Day 1: Arrival & Heritage</h2>
+        <div class="tile-container">
+            <div class="tile selected" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-primary">Must See</span>
+                <h3>Maison Ruinart</h3>
+                <p>Visit the cathedral-like chalk cellars. A perfect first stop in Reims.</p>
+                <div class="meta"><span>⏱ 2 Hours</span><span class="price-tag">€90+ pp</span></div>
+                <a href="https://www.ruinart.com" target="_blank" class="btn">Book Ruinart</a>
+            </div>
+            <div class="tile" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-alt">Alternative</span>
+                <h3>Champagne Pommery</h3>
+                <p>Eclectic art installations in vast underground galleries.</p>
+                <div class="meta"><span>⏱ 1.5 Hours</span><span class="price-tag">€35+ pp</span></div>
+                <a href="https://www.vrankenpommery.com" target="_blank" class="btn">View Pommery</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-block">
+        <h2 class="day-title">Day 2: The Birthday Celebration</h2>
+        <div class="tile-container">
+            <div class="tile selected" style="border-left: 10px solid var(--veuve-yellow);" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-primary">Birthday Star</span>
+                <h3>Veuve Clicquot</h3>
+                <p>Private tour of the historic estate and flagship cellars.</p>
+                <div class="meta"><span>⏱ 1.5 - 2 Hours</span><span class="price-tag">€60 - €150 pp</span></div>
+                <a href="https://www.veuveclicquot.com" target="_blank" class="btn">Book "Only One Quality"</a>
+            </div>
+            
+            <div class="tile selected" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-primary">Celebration Dinner</span>
+                <h3>L'Assiette Champenoise</h3>
+                <p>Arnaud Lallement's 3-star Michelin masterpiece. Absolute luxury.</p>
+                <div class="meta"><span>⏱ 3.5 Hours</span><span class="price-tag">€250 - €450 pp</span></div>
+                <a href="https://www.assiettechampenoise.com" target="_blank" class="btn">Reserve Birthday Table</a>
+            </div>
+
+            <div class="tile" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-alt">Alt Fine Dining</span>
+                <h3>Le Parc (Les Crayères)</h3>
+                <p>Chateau-style 2-star Michelin dining in a lush private park.</p>
+                <div class="meta"><span>⏱ 3 Hours</span><span class="price-tag">€180 - €300 pp</span></div>
+                <a href="https://lescrayeres.com" target="_blank" class="btn">Explore Le Parc</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-block">
+        <h2 class="day-title">Day 3: The Drive to Épernay</h2>
+        <div class="tile-container">
+            <div class="tile selected" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-primary">Global Icon</span>
+                <h3>Moët & Chandon</h3>
+                <p>The grandest house on the Avenue de Champagne.</p>
+                <div class="meta"><span>⏱ 1.5 Hours</span><span class="price-tag">€50+ pp</span></div>
+                <a href="https://www.moet.com" target="_blank" class="btn">Book Moët</a>
+            </div>
+            <div class="tile" onclick="this.classList.toggle('selected')">
+                <span class="badge badge-alt">Alternative</span>
+                <h3>Champagne de Venoge</h3>
+                <p>Elegant boutique experience with a beautiful wine bar patio.</p>
+                <div class="meta"><span>⏱ 1 Hour</span><span class="price-tag">€35+ pp</span></div>
+                <a href="https://www.champagne-de-venoge.com" target="_blank" class="btn">Explore de Venoge</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align:center; padding: 60px 20px; background:#1a1a1a; color:white; margin-top:50px;">
+    <p style="letter-spacing: 2px; font-weight: 300;">HAPPY BIRTHDAY | ENJOY THE BUBBLES RESPONSIBLY</p>
+</footer>
+
+<script>
+    // Note: The "selected" class is toggled on click to allow 
+    // users to compare and highlight their preferred route.
+</script>
+
+</body>
+</html>
